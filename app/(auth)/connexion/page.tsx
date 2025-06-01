@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { useRouter, useSearchParams } from "next/navigation";
+import { useRouter, } from "next/navigation";
 import { IoMdArrowBack } from "react-icons/io";
 import { toast } from "sonner";
 import { Eye, EyeOff, Loader } from "lucide-react";
@@ -10,8 +10,6 @@ import { signIn } from "next-auth/react";
 
 export default function Connexion() {
   const router = useRouter();
-  const searchParams = useSearchParams();
-  const callbackUrl = searchParams.get("callbackUrl") || "/";
   const [formData, setFormData] = useState({
     email: "",
     password: "",
@@ -64,7 +62,7 @@ export default function Connexion() {
           style: { color: "#10B981" },
           position: "top-right",
         });
-        setTimeout(() => router.push(callbackUrl), 2000);
+        setTimeout(() => router.push("/"), 2000);
       }
     } catch (error) {
       setErrors({ submit: "Erreur lors de la connexion" });
