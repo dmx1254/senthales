@@ -13,6 +13,7 @@ import {
   NavigationMenuTrigger,
 } from "@/components/ui/navigation-menu";
 import { IoMdHome } from "react-icons/io";
+import SelectionSemaineMenu from "./SelectionSemaineMenu";
 
 const components: { title: string; href: string; description: string }[] = [
   {
@@ -57,8 +58,8 @@ export function Navigation() {
     <NavigationMenu className="font-montserrat">
       <NavigationMenuList>
         <NavigationMenuItem>
-          <NavigationMenuLink asChild>
-            <Link href="/" passHref className="hover:bg-transparent">
+          <NavigationMenuLink asChild className="focus:bg-transparent active:bg-transparent focus-visible:bg-transparent focus:outline-none hover:bg-transparent">
+            <Link href="/" passHref>
               <span className="bg-[#FFCD00] px-4 py-2 rounded-[10px]">
                 <IoMdHome size={26} className="text-black" />
               </span>
@@ -66,55 +67,56 @@ export function Navigation() {
           </NavigationMenuLink>
         </NavigationMenuItem>
         <NavigationMenuItem>
-          <NavigationMenuTrigger className="text-white font-semibold">
-            Getting started
+          <NavigationMenuTrigger className="text-white text-sm uppercase font-semibold">
+            Notre compagnie
           </NavigationMenuTrigger>
           <NavigationMenuContent>
-            <ul className="grid gap-3 p-4 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
-              <li className="row-span-3">
-                <NavigationMenuLink asChild>
-                  <Link
-                    className="flex h-full w-full select-none flex-col justify-end rounded-md bg-gradient-to-b from-muted/50 to-muted p-6 no-underline outline-none focus:shadow-md"
-                    href="/"
-                  >
-                    <div className="mb-2 mt-4 text-lg font-medium">
-                      shadcn/ui
-                    </div>
-                    <p className="text-sm leading-tight text-muted-foreground">
-                      Beautifully designed components built with Radix UI and
-                      Tailwind CSS.
-                    </p>
-                  </Link>
-                </NavigationMenuLink>
-              </li>
-              <ListItem href="/docs" title="Introduction">
-                Re-usable components built using Radix UI and Tailwind CSS.
-              </ListItem>
-              <ListItem href="/docs/installation" title="Installation">
-                How to install dependencies and structure your app.
-              </ListItem>
-              <ListItem href="/docs/primitives/typography" title="Typography">
-                Styles for headings, paragraphs, lists...etc
-              </ListItem>
-            </ul>
+            <div className="flex flex-col items-start justify-center gap-1 p-2 w-full lg:w-[300px]">
+              <NavigationMenuLink
+                asChild
+                className="hover:text-[#142A4E] hover:bg-none"
+              >
+                <Link className="" href="/livraison">
+                  <span className="mb-2 mt-4 text-base">Livraison</span>
+                </Link>
+              </NavigationMenuLink>
+              <NavigationMenuLink
+                asChild
+                className="hover:text-[#142A4E] hover:bg-none"
+              >
+                <Link className="" href="/mentions-legales">
+                  <span className="mb-2 mt-4 text-base">Mentions légales</span>
+                </Link>
+              </NavigationMenuLink>
+              <NavigationMenuLink
+                asChild
+                className="hover:text-[#142A4E] hover:bg-none"
+              >
+                <Link className="" href="/conditions-utilisation">
+                  <span className="mb-2 mt-4 text-base">
+                    Conditions d&apos;utilisation
+                  </span>
+                </Link>
+              </NavigationMenuLink>
+              <NavigationMenuLink
+                asChild
+                className="hover:text-[#142A4E] hover:bg-none"
+              >
+                <Link className="" href="/a-propos">
+                  <span className="mb-2 mt-4 text-base">A propos</span>
+                </Link>
+              </NavigationMenuLink>
+            </div>
           </NavigationMenuContent>
         </NavigationMenuItem>
         <NavigationMenuItem>
-          <NavigationMenuTrigger className="text-white font-semibold">
-            Components
+          <NavigationMenuTrigger className="text-white text-sm uppercase font-semibold">
+            Selection de la semaine
           </NavigationMenuTrigger>
           <NavigationMenuContent>
-            <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
-              {components.map((component) => (
-                <ListItem
-                  key={component.title}
-                  title={component.title}
-                  href={component.href}
-                >
-                  {component.description}
-                </ListItem>
-              ))}
-            </ul>
+            <div className="w-full gap-3 p-4 md:w-[600px] md:grid-cols-2 lg:w-[600px] ">
+              <SelectionSemaineMenu />
+            </div>
           </NavigationMenuContent>
         </NavigationMenuItem>
       </NavigationMenuList>

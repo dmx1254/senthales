@@ -95,7 +95,7 @@ export default function Home() {
                   alt={c.title}
                   width={150}
                   height={150}
-                  className="object-cover object-center p-2 border border-gray-200 rounded-full group-hover:border-dashed group-hover:border-black transition-colors duration-300"
+                  className="object-cover object-center w-[100px] h-[100px] md:w-[150px] md:h-[150px] p-2 border border-gray-200 rounded-full group-hover:border-dashed group-hover:border-black transition-colors duration-300"
                 />
               </div>
               <div className="relative overflow-hidden">

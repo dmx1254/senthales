@@ -140,7 +140,7 @@ const Product = ({
               alt="compare"
               width={12}
               height={12}
-              className="w-4 h-4 text-white"
+              className="w-4 h-4 text-white" 
             />
           </button> */}
         </div>

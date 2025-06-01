@@ -1,15 +1,86 @@
 "use client";
 
+import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { FaPhoneAlt } from "react-icons/fa";
+import { toast } from "sonner";
+import { Loader } from "lucide-react";
 
 const Footer = () => {
   const pathname = usePathname();
+  const [email, setEmail] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    try {
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+      if (!email || !emailRegex.test(email)) {
+        toast.error("Veuillez entrer une adresse e-mail valide", {
+          style: {
+            color: "#ef4444",
+          },
+          position: "top-right",
+          duration: 3000,
+          icon: "🚨",
+        });
+        return;
+      }
+      setIsLoading(true);
+
+      const response = await fetch("/api/newsletter", {
+        method: "POST",
+        body: JSON.stringify({ email }),
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
+      const data = await response.json();
+      if (response.ok) {
+        toast.success("Vous êtes inscrit à la newsletter", {
+          style: {
+            background: "#142A4E",
+            color: "#fff",
+          },
+          position: "top-right",
+          duration: 5000,
+          icon: "🎉",
+        });
+        setEmail("");
+      } else {
+        toast.error(data.error, {
+          style: {
+            color: "#ef4444",
+          },
+          position: "top-right",
+          duration: 5000,
+          icon: "🚨",
+        });
+      }
+    } catch (error) {
+      console.log(error);
+      toast.error(
+        "Une erreur est survenue lors de l'inscription à la newsletter",
+        {
+          style: {
+            color: "#ef4444",
+          },
+          position: "top-right",
+          duration: 5000,
+          icon: "🚨",
+        }
+      );
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
   return (
     !pathname.includes("/profile") && (
-      <footer className="bg-[#142A4E] border-t border-gray-200 text-white font-montserrat">
+      <footer className="bg-[#142A4E] border-t mt-12 border-gray-200 text-white font-montserrat">
         {/* <div className="w-full h-12 bg-[#F5F5F5]" /> */}
         {/* Logo & Description */}
         <div className="bg-white text-neutral-900 pt-10 pb-0 text-center">
@@ -18,9 +89,9 @@ const Footer = () => {
             alt="senthales Logo"
             width={150}
             height={150}
-            className="mx-auto"
+            className="mx-auto object-cover object-center"
           />
-          <p className="max-w-3xl mx-auto mt-5 text-base">
+          <p className="max-w-5xl mx-auto mt-5 pb-6 text-sm text-neutral-500 px-4">
             Nous sommes une boutique en ligne 100% sénégalaise de produits
             alimentaires et de boissons. Nous vous apportons innovation et
             créativité en proposant des produits soigneusement sélectionnés de
@@ -32,7 +103,7 @@ const Footer = () => {
           {/* Informations */}
           <div className="min-w-[220px] mb-5 flex flex-col items-start gap-2">
             <h3 className="font-bold text-base mb-2">INFORMATIONS</h3>
-            <div className="mb-2 text-sm">
+            <div className="mb-2 text-sm text-neutral-500">
               <span role="img" aria-label="location" className="text-sm">
                 📍
               </span>{" "}
@@ -42,7 +113,7 @@ const Footer = () => {
             </div>
             <Link
               href="mailto:senthales.support@gmail.com"
-              className="text-sm hover:opacity-80"
+              className="text-sm hover:opacity-80 text-neutral-500"
             >
               <span role="img" aria-label="mail" className="text-sm">
                 ✉️
@@ -51,7 +122,7 @@ const Footer = () => {
             </Link>
             <Link
               href="https://wa.me/221771457816"
-              className="text-sm hover:opacity-80"
+              className="text-sm hover:opacity-80 text-neutral-500"
             >
               <span role="img" aria-label="phone" className="text-sm">
                 📞
@@ -62,35 +133,56 @@ const Footer = () => {
           {/* Catégorie */}
           <div className="min-w-[220px] mb-5 flex flex-col items-start gap-2">
             <h3 className="font-bold text-base mb-2">CATEGORIE</h3>
-            <Link href="/epicerie-sucree" className="text-sm">
+            <Link
+              href="/epicerie-sucree"
+              className="text-sm hover:opacity-80 text-neutral-500"
+            >
               Epicerie Sucrée
             </Link>
             <Link
               href="/epicerie-sucree/cafe-capsule-moulu"
-              className="text-sm"
+              className="text-sm hover:opacity-80 text-neutral-500"
             >
               Café capsule &amp; Moulu
             </Link>
-            <Link href="/riz" className="text-sm">
+            <Link
+              href="/riz"
+              className="text-sm hover:opacity-80 text-neutral-500"
+            >
               Riz
             </Link>
-            <Link href="/huile" className="text-sm">
+            <Link
+              href="/huile"
+              className="text-sm hover:opacity-80 text-neutral-500"
+            >
               Huile
             </Link>
-            <Link href="/fruits-legumes-viandes" className="text-sm">
+            <Link
+              href="/fruits-legumes-viandes"
+              className="text-sm hover:opacity-80 text-neutral-500"
+            >
               Fruits &amp; légumes &amp; viandes
             </Link>
           </div>
           {/* Votre Compte */}
           <div className="min-w-[220px] mb-5 flex flex-col items-start gap-2">
             <h3 className="font-bold text-base mb-2">VOTRE COMPTE</h3>
-            <Link href="/profile" className="text-sm">
+            <Link
+              href="/profile"
+              className="text-sm hover:opacity-80 text-neutral-500"
+            >
               Informations personnelles
             </Link>
-            <Link href="/profile/commandes" className="text-sm">
+            <Link
+              href="/profile/commandes"
+              className="text-sm hover:opacity-80 text-neutral-500"
+            >
               Commandes
             </Link>
-            <Link href="/profile/favoris" className="text-sm">
+            <Link
+              href="/profile/favoris"
+              className="text-sm hover:opacity-80 text-neutral-500"
+            >
               Favoris
             </Link>
             {/* <Link href="/profile/adresses" className="text-sm">
@@ -106,14 +198,26 @@ const Footer = () => {
           {/* Newsletter */}
           <div className="mb-5 w-full lg:max-w-[300px]">
             <h3 className="font-bold text-base mb-2">NEWSLETTER</h3>
-            <form className="flex mb-2">
+            <form onSubmit={handleSubmit} className="flex mb-2">
               <input
                 type="email"
+                required
+                value={email}
+                onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
+                  setEmail(e.target.value)
+                }
                 placeholder="Votre adresse e-mail"
-                className="px-3 w-full text-sm py-2 rounded-l-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-primary"
+                className="px-3 w-full outline-none focus:outline-none text-sm py-2 rounded-l-md border border-gray-300 focus:ring-2 focus:ring-primary"
               />
-              <button className="bg-[#142A4E] text-white text-sm p-2 rounded-r-md font-bold hover:bg-[#142A4E]/90 transition-colors">
-                S&apos;ABONNER
+              <button
+                type="submit"
+                className="bg-[#142A4E] cursor-pointer text-white text-sm p-2 rounded-r-md font-bold hover:bg-[#142A4E]/90 transition-colors"
+              >
+                {isLoading ? (
+                  <Loader className="animate-spin" size={16} />
+                ) : (
+                  "S'ABONNER"
+                )}
               </button>
             </form>
             <div className="text-sm text-gray-600 w-full lg:max-w-[300px]">
