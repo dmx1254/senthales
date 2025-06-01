@@ -16,7 +16,13 @@ export const metadata: Metadata = {
     default: "Senthales - Supermarché en ligne au Sénégal",
     template: "%s | Senthales",
   },
-  description: "Faites vos courses en ligne au Sénégal avec Senthales. Large choix de produits alimentaires, boissons, produits locaux et plus encore. Livraison rapide et service de qualité.",
+  description:
+    "Faites vos courses en ligne au Sénégal avec Senthales. Large choix de produits alimentaires, boissons, produits locaux et plus encore. Livraison rapide et service de qualité.",
+  icons: {
+    icon: "/favicon.png",
+    shortcut: "/favicon.png",
+    apple: "/favicon.png",
+  },
   keywords: [
     "supermarché en ligne Sénégal",
     "courses en ligne Dakar",
@@ -37,7 +43,7 @@ export const metadata: Metadata = {
     "livraison courses",
     "supermarché Dakar",
     "alimentation en ligne",
-    "produits sénégalais"
+    "produits sénégalais",
   ],
   authors: [{ name: "Senthales" }],
   creator: "Senthales",
@@ -53,7 +59,8 @@ export const metadata: Metadata = {
     url: "https://www.senthales.com",
     siteName: "Senthales",
     title: "Senthales - Votre supermarché en ligne au Sénégal",
-    description: "Faites vos courses en ligne au Sénégal avec Senthales. Large choix de produits alimentaires, boissons, produits locaux et plus encore. Livraison rapide et service de qualité.",
+    description:
+      "Faites vos courses en ligne au Sénégal avec Senthales. Large choix de produits alimentaires, boissons, produits locaux et plus encore. Livraison rapide et service de qualité.",
     images: [
       {
         url: "/favicon.png",
@@ -66,7 +73,8 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Senthales - Votre supermarché en ligne au Sénégal",
-    description: "Faites vos courses en ligne au Sénégal avec Senthales. Large choix de produits alimentaires, boissons, produits locaux et plus encore.",
+    description:
+      "Faites vos courses en ligne au Sénégal avec Senthales. Large choix de produits alimentaires, boissons, produits locaux et plus encore.",
     images: ["/favicon.png"],
     creator: "@senthales",
   },
@@ -95,15 +103,6 @@ export const metadata: Metadata = {
   category: "shopping",
   classification: "Business",
   referrer: "origin-when-cross-origin",
-  icons: {
-    icon: "/favicon.png",
-    shortcut: "/favicon.png",
-    apple: "/favicon.png",
-    other: {
-      rel: "apple-touch-icon-precomposed",
-      url: "/favicon.png",
-    },
-  },
   manifest: "/manifest.json",
   viewport: {
     width: "device-width",
