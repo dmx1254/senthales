@@ -147,7 +147,9 @@ export default function ProductMoment() {
   return (
     <div className="w-full font-montserrat">
       <div className="flex items-center justify-between mb-8 border-b border-gray-200 pb-4">
-        <h2 className="text-lg md:text-2xl font-bold text-black/70">Produits du Moment</h2>
+        <h2 className="text-lg md:text-2xl font-bold text-black/70">
+          Produits du Moment
+        </h2>
         <div className="flex gap-4 items-center">
           <button
             className={clsx({
@@ -247,7 +249,7 @@ export default function ProductMoment() {
                   </span>
                 </div>
               </div>
-              <div className="hidden md:flex absolute top-[50%] group-hover:flex transition-all duration-300 items-center justify-center gap-2 ">
+              <div className="hidden absolute top-[50%] md:group-hover:flex transition-all duration-300 items-center justify-center gap-2 ">
                 <button
                   className="flex items-center justify-center p-1.5 rounded-[6px] bg-[#142A4E] text-white cursor-pointer hover:bg-[#142A4E]/80"
                   onClick={() => handleAddToFavs(product)}
@@ -267,16 +269,16 @@ export default function ProductMoment() {
                   <Eye size={17} />
                 </button>
                 {/* <button className="flex items-center justify-center p-1.5 rounded-[6px] bg-[#142A4E] text-white cursor-pointer hover:bg-[#142A4E]/80">
-                      <Image
-                        src="/images/comparepro.svg"
-                        alt="compare"
-                        width={12}
-                        height={12}
-                        className="w-4 h-4 text-white"
-                      />
-                    </button> */}
+                  <Image
+                    src="/images/comparepro.svg"
+                    alt="compare"
+                    width={12}
+                    height={12}
+                    className="w-4 h-4 text-white"
+                  />
+                </button> */}
               </div>
-              <div className="flex md:hidden absolute top-[50%] group-hover:flex transition-all duration-300 items-center justify-center gap-2 ">
+              <div className="flex md:hidden absolute top-[50%] transition-all duration-300 items-center justify-center gap-2 ">
                 <button
                   className="flex items-center justify-center p-1.5 rounded-[6px] bg-[#142A4E] text-white cursor-pointer hover:bg-[#142A4E]/80"
                   onClick={() => handleAddToFavs(product)}

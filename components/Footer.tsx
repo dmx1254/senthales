@@ -40,18 +40,24 @@ const Footer = () => {
               <br />
               Dakar, Sénégal
             </div>
-            <div className="mb-2 text-sm">
+            <Link
+              href="mailto:senthales.support@gmail.com"
+              className="text-sm hover:opacity-80"
+            >
               <span role="img" aria-label="mail" className="text-sm">
                 ✉️
               </span>{" "}
               senthales.support@gmail.com
-            </div>
-            <div className="text-sm">
+            </Link>
+            <Link
+              href="https://wa.me/221771457816"
+              className="text-sm hover:opacity-80"
+            >
               <span role="img" aria-label="phone" className="text-sm">
                 📞
               </span>{" "}
               WhatsApp +221 77 145 78 16
-            </div>
+            </Link>
           </div>
           {/* Catégorie */}
           <div className="min-w-[220px] mb-5 flex flex-col items-start gap-2">

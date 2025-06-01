@@ -252,7 +252,7 @@ export default function MostSell() {
                   </span>
                 </div>
               </div>
-              <div className="hidden md:flex absolute top-[50%] group-hover:flex transition-all duration-300 items-center justify-center gap-2">
+              <div className="hidden absolute top-[50%] md:group-hover:flex transition-all duration-300 items-center justify-center gap-2">
                 <button
                   onClick={() => handleAddToFavs(product)}
                   className="flex items-center justify-center p-1.5 rounded-[6px] bg-[#142A4E] text-white cursor-pointer hover:bg-[#142A4E]/80"
@@ -281,7 +281,7 @@ export default function MostSell() {
                   />
                 </button> */}
               </div>
-              <div className="flex md:hidden absolute top-[50%] group-hover:flex transition-all duration-300 items-center justify-center gap-2 ">
+              <div className="flex md:hidden absolute top-[50%] transition-all duration-300 items-center justify-center gap-2 ">
                 <button
                   className="flex items-center justify-center p-1.5 rounded-[6px] bg-[#142A4E] text-white cursor-pointer hover:bg-[#142A4E]/80"
                   onClick={() => handleAddToFavs(product)}
