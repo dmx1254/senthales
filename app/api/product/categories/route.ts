@@ -1,6 +1,7 @@
 import Product from "@/lib/models/product";
 import { NextRequest, NextResponse } from "next/server";
 import { SortOrder } from "mongoose";
+import { connectDB } from "@/lib/db/dbase";
 
 interface FilterQuery {
   category?: string;
@@ -11,6 +12,8 @@ interface FilterQuery {
     $lte?: number;
   };
 }
+
+await connectDB();
 
 type SortQuery = { [key: string]: SortOrder };
 
@@ -26,8 +29,6 @@ export async function GET(request: NextRequest) {
     const page = parseInt(searchParams.get("page") || "1");
     const limit = parseInt(searchParams.get("limit") || "8");
     const skip = (page - 1) * limit;
-
-    console.log("Search params: " + searchParams.toString());
 
     const filter: FilterQuery = {};
     if (category) filter.category = category;

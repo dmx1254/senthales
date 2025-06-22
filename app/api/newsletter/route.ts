@@ -1,6 +1,9 @@
+import { connectDB } from "@/lib/db/dbase";
 import Newsletter from "@/lib/models/newsletter";
 import { NextResponse } from "next/server";
 
+
+await connectDB();
 export async function POST(req: Request) {
   const { email } = await req.json();
 

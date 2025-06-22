@@ -1,5 +1,9 @@
+import { connectDB } from "@/lib/db/dbase";
 import Product from "@/lib/models/product";
 import { NextRequest, NextResponse } from "next/server";
+
+
+await connectDB();
 
 export async function GET(request: NextRequest) {
   try {
