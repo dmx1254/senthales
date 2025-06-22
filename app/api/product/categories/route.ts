@@ -24,18 +24,11 @@ export async function GET(request: NextRequest) {
     const inStock = searchParams.get("inStock");
     const sort = searchParams.get("sort") || "pertinence";
     const page = parseInt(searchParams.get("page") || "1");
-    const limit = parseInt(searchParams.get("limit") || "12");
+    const limit = parseInt(searchParams.get("limit") || "8");
     const skip = (page - 1) * limit;
 
-    // console.log("category", category);
-    // console.log("subCategory", subCategory);
-    // console.log("minPrice", minPrice);
-    // console.log("maxPrice", maxPrice);
-    // console.log("inStock", inStock);
-    // console.log("sort", sort);
-    // console.log("page", page);
-    // console.log("limit", limit);
-    // Build filter object
+    console.log("Search params: " + searchParams.toString());
+
     const filter: FilterQuery = {};
     if (category) filter.category = category;
     if (subCategory) filter.subCategory = subCategory;

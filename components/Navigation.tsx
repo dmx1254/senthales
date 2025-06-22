@@ -3,7 +3,7 @@
 import * as React from "react";
 import Link from "next/link";
 
-import { cn } from "@/lib/utils";
+import { cn, ProductR } from "@/lib/utils";
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -15,50 +15,35 @@ import {
 import { IoMdHome } from "react-icons/io";
 import SelectionSemaineMenu from "./SelectionSemaineMenu";
 
-const components: { title: string; href: string; description: string }[] = [
-  {
-    title: "Alert Dialog",
-    href: "/docs/primitives/alert-dialog",
-    description:
-      "A modal dialog that interrupts the user with important content and expects a response.",
-  },
-  {
-    title: "Hover Card",
-    href: "/docs/primitives/hover-card",
-    description:
-      "For sighted users to preview content available behind a link.",
-  },
-  {
-    title: "Progress",
-    href: "/docs/primitives/progress",
-    description:
-      "Displays an indicator showing the completion progress of a task, typically displayed as a progress bar.",
-  },
-  {
-    title: "Scroll-area",
-    href: "/docs/primitives/scroll-area",
-    description: "Visually or semantically separates content.",
-  },
-  {
-    title: "Tabs",
-    href: "/docs/primitives/tabs",
-    description:
-      "A set of layered sections of content—known as tab panels—that are displayed one at a time.",
-  },
-  {
-    title: "Tooltip",
-    href: "/docs/primitives/tooltip",
-    description:
-      "A popup that displays information related to an element when the element receives keyboard focus or the mouse hovers over it.",
-  },
-];
-
 export function Navigation() {
+  const [products, setProducts] = React.useState<ProductR[]>([]);
+  const [isLoading, setIsLoading] = React.useState(false);
+
+  React.useEffect(() => {
+    try {
+      setIsLoading(true);
+      fetch("/api/selection-semaine", {
+        cache: "force-cache",
+        next: {
+          revalidate: 60 * 60 * 24 * 7, // 1 hour
+        },
+      })
+        .then((res) => res.json())
+        .then((data) => setProducts(data.products));
+    } catch (error) {
+      console.error("Error fetching products:", error);
+    } finally {
+      setIsLoading(false);
+    }
+  }, []);
   return (
     <NavigationMenu className="font-montserrat">
       <NavigationMenuList>
         <NavigationMenuItem>
-          <NavigationMenuLink asChild className="focus:bg-transparent active:bg-transparent focus-visible:bg-transparent focus:outline-none hover:bg-transparent">
+          <NavigationMenuLink
+            asChild
+            className="focus:bg-transparent active:bg-transparent focus-visible:bg-transparent focus:outline-none hover:bg-transparent"
+          >
             <Link href="/" passHref>
               <span className="bg-[#FFCD00] px-4 py-2 rounded-[10px]">
                 <IoMdHome size={26} className="text-black" />
@@ -115,7 +100,7 @@ export function Navigation() {
           </NavigationMenuTrigger>
           <NavigationMenuContent>
             <div className="w-full gap-3 p-4 md:w-[600px] md:grid-cols-2 lg:w-[600px] ">
-              <SelectionSemaineMenu />
+              <SelectionSemaineMenu products={products} isLoading={isLoading} />
             </div>
           </NavigationMenuContent>
         </NavigationMenuItem>

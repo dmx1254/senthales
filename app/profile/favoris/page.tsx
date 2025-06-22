@@ -10,7 +10,6 @@ export default function FavorisPage() {
   const { favsItems, removeFavsItem } = useCartStore();
   const [loading, setLoading] = useState(false);
 
-  console.log(favsItems);
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-[#FAFAFA] via-[#f7f7e8] to-[#f0f4ff] pb-8">

@@ -46,63 +46,80 @@
     <priority>0.6</priority>
   </url>
 
+  
+
   <!-- Catégories principales -->
+  
+
   <url>
-    <loc>https://www.senthales.com/categories/epicerie-sucree</loc>
+    <loc>https://www.senthales.com/epicerie-sucree</loc>
     <lastmod>2024-03-20</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://www.senthales.com/categories/riz</loc>
+    <loc>https://www.senthales.com/fruits-legumes-viandes</loc>
     <lastmod>2024-03-20</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://www.senthales.com/categories/huile</loc>
+    <loc>https://www.senthales.com/epicerie-salee</loc>
     <lastmod>2024-03-20</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://www.senthales.com/categories/boissons</loc>
+    <loc>https://www.senthales.com/epicerie-sucree/cafe-capsule-moulu</loc>
     <lastmod>2024-03-20</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://www.senthales.com/categories/pate-alimentaire</loc>
+    <loc>https://www.senthales.com/riz</loc>
     <lastmod>2024-03-20</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://www.senthales.com/categories/fruits-legumes-viandes</loc>
+    <loc>https://www.senthales.com/huile</loc>
     <lastmod>2024-03-20</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://www.senthales.com/categories/biscuits-confiserie</loc>
+    <loc>https://www.senthales.com/boissons</loc>
     <lastmod>2024-03-20</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://www.senthales.com/categories/produits-bebe</loc>
+    <loc>https://www.senthales.com/pate-alimentaire</loc>
     <lastmod>2024-03-20</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://www.senthales.com/categories/epicerie-salee</loc>
+    <loc>https://www.senthales.com/fruits-legumes-viandes</loc>
     <lastmod>2024-03-20</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://www.senthales.com/categories/produits-locaux</loc>
+    <loc>https://www.senthales.com/biscuits-confiserie</loc>
+    <lastmod>2024-03-20</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.senthales.com/produits-bebe</loc>
+    <lastmod>2024-03-20</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.9</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.senthales.com/produits-locaux</loc>
     <lastmod>2024-03-20</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.9</priority>
@@ -114,12 +131,6 @@
     <lastmod>2024-03-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://www.senthales.com/mentions-legales</loc>
-    <lastmod>2024-03-20</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.3</priority>
   </url>
   <url>
     <loc>https://www.senthales.com/politique-confidentialite</loc>

@@ -5,7 +5,6 @@ import Sidebar from "@/components/Sidebar";
 import { SlidersHorizontal } from "lucide-react";
 import Link from "next/link";
 import { useParams } from "next/navigation";
-import { ScrollArea } from "@/components/ui/scroll-area";
 import Product from "@/components/Product";
 import { ProductR } from "@/lib/utils";
 import { categories, SubType } from "@/lib/data";
@@ -19,9 +18,6 @@ interface Filters {
 
 const CategoryPage = () => {
   const { category, subcatId } = useParams();
-
-  console.log("subcatId", subcatId);
-  console.log("category", category);
 
   const [showFilters, setShowFilters] = useState<boolean>(true);
   const [products, setProducts] = useState<ProductR[]>([]);

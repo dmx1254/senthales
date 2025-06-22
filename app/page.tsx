@@ -141,7 +141,6 @@ export default function Home() {
               className="object-contain object-center w-full h-full md:h-[500px] rounded-[10px] transition-all duration-300"
             />
           </div>
-
           <MostSell />
         </div>
       </div>

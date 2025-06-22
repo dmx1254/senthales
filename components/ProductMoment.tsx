@@ -62,7 +62,17 @@ export default function ProductMoment() {
       setIsProductFetched(true);
       try {
         const response = await fetch(
-          `/api/product/categories?category=${selectedCategory}&page=${page}&limit=${PRODUCTS_PER_PAGE}`
+          `/api/product/categories?category=${selectedCategory}&page=${page}&limit=${PRODUCTS_PER_PAGE}`,
+          {
+            method: "GET",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            // cache: "force-cache",
+            // next: {
+            //   revalidate: 60 * 60, // 1 hour
+            // },
+          }
         );
         const data = await response.json();
         setProducts(data.products);

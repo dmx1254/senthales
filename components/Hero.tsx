@@ -62,7 +62,7 @@ const Hero = () => {
                     <div>
                       <UserRound
                         strokeWidth={1}
-                        size={38}
+                        size={36}
                         className="text-gray-500"
                       />
                     </div>
