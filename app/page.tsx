@@ -14,11 +14,19 @@ export default function Home() {
   const images = [
     {
       id: "hgu12s",
-      icon: "/banner1.jpg",
+      icon: "/banner/banner1.jpg",
     },
     {
       id: "habkq",
-      icon: "/banner2.jpg",
+      icon: "/banner/banner2.jpg",
+    },
+    {
+      id: "paxwt",
+      icon: "/banner/banner3.jpg",
+    },
+    {
+      id: "nazpr",
+      icon: "/banner/banner4.jpg",
     },
   ];
 
@@ -60,13 +68,19 @@ export default function Home() {
         <Sidebar />
       </div>
       <div className="flex-1 flex-col items-center justify-center">
-        <div className="relative w-full">
+        <div
+          className="relative w-full"
+          style={{
+            boxShadow: "rgba(0, 0, 0, 0.16) 0px 1px 4px",
+            borderRadius: "10px",
+          }}
+        >
           <Image
             src={images[isActive].icon}
             alt="banner"
             width={2000}
             height={2000}
-            className="object-cover object-center h-auto md:h-[500px] rounded-[10px] transition-all duration-300"
+            className="object-cover object-center h-auto md:h-[400px] rounded-[10px] transition-all duration-300"
           />
           <div className="absolute top-[44%] left-0 w-full h-full flex items-center gap-1 justify-center">
             {images.map((image, index) => (
@@ -107,38 +121,47 @@ export default function Home() {
             </Link>
           ))}
         </div>
-        <div className="w-full flex max-md:flex-col items-center gap-4">
-          <Image
-            src="/pub/service-clients.png"
-            alt="service-clients"
-            width={2000}
-            height={500}
-            className="object-contain object-center h-auto w-full md:w-1/4 rounded-[10px] transition-all duration-300"
-          />
-          <Image
-            src="/pub/atranger.png"
-            alt="atranger"
-            width={2000}
-            height={500}
-            className="object-contain object-center h-auto w-full md:w-2/4 rounded-[10px] transition-all duration-300"
-          />
-          <Image
-            src="/pub/patiss.png"
-            alt="patisserie"
-            width={2000}
-            height={500}
-            className="object-contain object-center h-auto w-full md:w-1/4 rounded-[10px] transition-all duration-300"
-          />
+        <div className="w-full flex max-md:flex-col items-stretch gap-4">
+          <div className="w-full md:w-1/4">
+            <Image
+              src="/poster/poster1.jpg"
+              alt="service-clients"
+              width={1000}
+              height={300}
+              className="object-cover object-center h-[250px] w-full rounded-[10px] transition-all duration-300"
+            />
+          </div>
+          <div className="w-full md:w-2/4">
+            <Image
+              src="/poster/poster5.jpg"
+              alt="atranger"
+              width={1000}
+              height={300}
+              className="object-cover object-center h-[250px] w-full rounded-[10px] transition-all duration-300"
+            />
+          </div>
+          <div className="w-full md:w-1/4">
+            <Image
+              src="/poster/poster3.jpg"
+              alt="patisserie"
+              width={1000}
+              height={300}
+              className="object-cover object-center h-[250px] w-full rounded-[10px] transition-all duration-300"
+            />
+          </div>
         </div>
         <div className="w-full mt-12 flex flex-col gap-12">
           <ProductMoment />
           <div className="w-full h-full">
-            <Image
-              src="/pub/fruit-et-leg.png"
-              alt="fruit-et-legumes"
+            <video
+              src="/banner/vid.mp4"
+              autoPlay
+              loop
+              muted
+              playsInline
               width={2000}
               height={500}
-              className="object-contain object-center w-full h-full md:h-[500px] rounded-[10px] transition-all duration-300"
+              className="object-cover object-center w-full h-full md:max-h-[400px] md:h-[500px] rounded-[10px] transition-all duration-300"
             />
           </div>
           <MostSell />
