@@ -270,6 +270,14 @@ export const categories: Category[] = [
       },
     ],
   },
+
+  {
+    id: "hxapq",
+    title: "Lait",
+    slug: "lait",
+    isLink: true,
+  },
+
   {
     id: "mxjax",
     title: "Produits-bébé",
