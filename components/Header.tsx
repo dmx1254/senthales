@@ -66,7 +66,7 @@ const Header = () => {
       <div className="flex items-center gap-2">
         <MdOutlineSupportAgent />
         <div className="text-xs md:text-sm">
-          <span className="font-bold">Support whatsapp:</span> +221 77 145 78 16
+          <span className="font-bold">Support whatsapp:</span> +221 78 323 94 61
         </div>
       </div>
       <Sheet>
