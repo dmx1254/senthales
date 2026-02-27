@@ -18,7 +18,7 @@ const Navbar = () => {
         >
           <FaPhoneAlt className="text-white" size={18} />
           <span className="text-sm text-white font-semibold">
-            24/7 support Whatsapp +221 77 145 78 16
+            24/7 support Whatsapp +221 78 323 94 61
           </span>
         </Link>
       </div>
