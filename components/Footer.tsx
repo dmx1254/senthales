@@ -121,13 +121,13 @@ const Footer = () => {
               senthales.support@gmail.com
             </Link>
             <Link
-              href="https://wa.me/221771457816"
+              href="https://wa.me/221783239461"
               className="text-sm hover:opacity-80 text-neutral-500"
             >
               <span role="img" aria-label="phone" className="text-sm">
                 📞
               </span>{" "}
-              WhatsApp +221 77 145 78 16
+              WhatsApp +221 78 323 94 61
             </Link>
           </div>
           {/* Catégorie */}
