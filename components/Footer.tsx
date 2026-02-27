@@ -247,7 +247,7 @@ const Footer = () => {
         <div className="flex md:hidden items-center py-2 justify-center gap-2">
           <FaPhoneAlt className="text-white" size={16} />
           <span className="text-xs text-white font-semibold">
-            24/7 support Whatsapp +221 77 145 78 16
+            24/7 support Whatsapp +221 78 323 94 61
           </span>
         </div>
       </footer>
